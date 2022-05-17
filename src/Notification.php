@@ -148,7 +148,7 @@ class Notification implements NotificationContract, Arrayable
         $this->notification['sound'] = $value;
         return $this;
     }
-    
+
     public function playSound(bool $value = true): Notification
     {
         $this->notification['play_sound'] = $value;
@@ -166,8 +166,15 @@ class Notification implements NotificationContract, Arrayable
         return $this->displayToasted(false);
     }
 
+    public function eventName(string $value): Notification
+    {
+        $this->notification['event_name'] = $value;
+        return $this;
+    }
+
     public function toArray(): array
     {
+        $this->notification['tenant'] = tenant('id');
         return $this->notification;
     }
 }

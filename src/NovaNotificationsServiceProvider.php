@@ -40,6 +40,7 @@ class NovaNotificationsServiceProvider extends ServiceProvider
                 'play_sound' => config('nova-notifications.play_sound'),
                 'default_sound' => config('nova-notifications.default_sound'),
                 'toasted_enabled' => config('nova-notifications.toasted_enabled'),
+                'tenant_id' => tenant('id'),
             ]);
         });
     }
